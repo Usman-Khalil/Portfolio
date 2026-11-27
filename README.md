@@ -80,7 +80,9 @@ node scripts/build-data.mjs --fetch-github
 
 ## Deploy
 
-This is a static site. Deploy the root directory directly to **GitHub Pages**, **Vercel**, **Netlify**, or **Cloudflare Pages** with no build command needed.
+This is a static site. GitHub Pages deploys automatically from `main` using the workflow in `.github/workflows/pages.yml`. For the first deployment, open **Settings → Pages** and set **Source** to **GitHub Actions**. The site will be available at <https://usman-khalil.github.io/Portfolio/>.
+
+You can also deploy the root directory to **Vercel**, **Netlify**, or **Cloudflare Pages** with no build command needed.
 
 ---
 
