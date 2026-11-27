@@ -21,7 +21,7 @@
   {
    "repo": "plants-vs-zombies",
    "url": "https://github.com/Usman-Khalil/PlantsVsZombies",
-   "description": "A Plants vs. Zombies style Windows tower-defense game in C++ with SFML: place plants, collect suns and stop zombie waves.",
+   "description": "A Windows tower-defense game built with C++ and SFML. Place plants, collect suns to fund your defenses, and stop zombie waves before they reach the house.",
    "tag": "Game · C++",
    "stars": null,
    "language": "C++",
@@ -44,6 +44,7 @@
     "Visual Studio",
     "MSVC"
    ],
+   "details": "Defend a lawn by placing shooter plants and sunflowers, collecting suns to fund additional plants, and stopping zombies as they move toward the house. Zombies spawn across multiple rows and are attacked by plant-fired projectiles. The game demonstrates a classic event, update, and render loop, with managers coordinating plants, zombies, bullets, suns, and collision handling. SFML provides the graphics, audio, windowing, and input. The repository includes Visual Studio project files for Windows and an architecture diagram.",
    "images": [
     {
      "file": "shots/pvz-main-menu.webp",
@@ -81,18 +82,16 @@
     "",
     "\u0001IMG0\u0001",
     "",
-    "### A Plants vs. Zombies style Windows tower-defense game in C++ with SFML: place plants, collect suns and stop zombie waves.",
+    "### A Windows tower-defense game built with C++ and SFML. Place plants, collect suns to fund your defenses, and stop zombie waves before they reach the house.",
     "",
-    "Players place plants on a lawn to stop waves of zombies from reaching the",
-    "house. Plants shoot automatically, sunflowers and falling suns supply the",
-    "resources used to buy new plants, and zombies spawn on multiple rows with HP",
-    "bars. The game runs on a classic loop of events, update and render,",
-    "coordinated by PlantManager, ZombieManager, BulletManager, SunManager and a",
-    "CollisionManager, with SFML handling graphics, audio, windowing and input.",
-    "Controls are mouse-driven (click to collect suns, select and place plants,",
-    "press Start in the menu). Ships as a Visual Studio solution for Windows with",
-    "SFML runtime DLLs, plus an ASCII architecture diagram of the whole game",
-    "loop.",
+    "Defend a lawn by placing shooter plants and sunflowers, collecting suns to",
+    "fund additional plants, and stopping zombies as they move toward the house.",
+    "Zombies spawn across multiple rows and are attacked by plant-fired",
+    "projectiles. The game demonstrates a classic event, update, and render loop,",
+    "with managers coordinating plants, zombies, bullets, suns, and collision",
+    "handling. SFML provides the graphics, audio, windowing, and input. The",
+    "repository includes Visual Studio project files for Windows and an",
+    "architecture diagram.",
     "",
     "Built with C++ · SFML · OOP · STL · Visual Studio · MSVC",
     "",
@@ -112,7 +111,7 @@
   {
    "repo": "masm-debugger-clone",
    "url": "https://github.com/Usman-Khalil/Masm_Debugger_Project",
-   "description": "A console MASM-style virtual machine and debugger in C++ for stepping through assembly and inspecting CPU state.",
+   "description": "A C++ console virtual-machine emulator for exploring a simplified CPU. Execute and step through assembly while inspecting registers, flags, and memory.",
    "tag": "Tooling · C++",
    "stars": null,
    "language": "C++",
@@ -133,22 +132,20 @@
     "Git",
     "CPU emulation"
    ],
+   "details": "This educational emulator simulates a basic CPU architecture so users can observe how low-level instructions execute. Enter and run assembly code, step through execution with real-time register updates, and inspect or edit memory with hex dumps. Customizable registers and flags, breakpoints, and memory watches provide tools for tracing program behavior. The project is written in C++ and released under the MIT License.",
    "images": [],
    "lines": [
     "# Masm Debugger Clone",
     "",
     "",
-    "### A console MASM-style virtual machine and debugger in C++ for stepping through assembly and inspecting CPU state.",
+    "### A C++ console virtual-machine emulator for exploring a simplified CPU. Execute and step through assembly while inspecting registers, flags, and memory.",
     "",
-    "A console-based virtual machine emulator inspired by vintage emulators,",
-    "built to show how a processor handles tasks at a low level. It simulates a",
-    "simplified CPU with customizable registers and flags, supports hex-dump",
-    "memory views with editing, assembly input and execution, step-by-step",
-    "tracing with real-time register updates, and debugging aids such as",
-    "breakpoints and memory watches. A command shell (dump, enter, fill, move,",
-    "search, assemble, unassemble, trace) drives it, and instructions persist to",
-    "memory.txt. Designed for education and system-level debugging, and released",
-    "under the MIT License.",
+    "This educational emulator simulates a basic CPU architecture so users can",
+    "observe how low-level instructions execute. Enter and run assembly code,",
+    "step through execution with real-time register updates, and inspect or edit",
+    "memory with hex dumps. Customizable registers and flags, breakpoints, and",
+    "memory watches provide tools for tracing program behavior. The project is",
+    "written in C++ and released under the MIT License.",
     "",
     "Built with C++ · MSVC · Git · CPU emulation",
     "",
@@ -177,6 +174,7 @@
    "stack": [
     "C++"
    ],
+   "details": "Solutions to NeetCode.io practice problems, part of a wider 600+ problem competitive programming habit.",
    "images": [],
    "lines": [
     "# neetcode-submissions",
@@ -213,6 +211,7 @@
    "stack": [
     "C++"
    ],
+   "details": "Coursework practice covering structs, enums, classes, constructors, destructors, operator overloading and templates.",
    "images": [],
    "lines": [
     "# OOP",

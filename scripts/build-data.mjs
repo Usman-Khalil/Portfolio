@@ -5,8 +5,9 @@
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CONFIG = JSON.parse(fs.readFileSync(path.join(ROOT, "portfolio.config.json"), "utf8"));
 const FETCH_GH = process.argv.includes("--fetch-github");
 
@@ -225,6 +226,7 @@ const projects = CONFIG.projects.map((p) => {
     counts: {},
     github: full ? `https://github.com/${full}` : null,
     stack: p.stack || [],
+    details: p.long || p.desc,
     images,
     lines,
   };

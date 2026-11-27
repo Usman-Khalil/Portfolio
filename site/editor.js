@@ -302,6 +302,7 @@ function projectSpec(project) {
   const out = [
     { segments: [[project.repo, "md-h md-h1"]] },
     ...(project.description ? [{ segments: [project.description], className: "t-dim" }] : []),
+    ...(project.details ? [{ segments: [" "] }, { segments: [project.details], className: "t-dim" }] : []),
     { segments: [" "] },
     fact("stars", project.stars, ["  ", ...gauge(share / 100, 17 + note.length), ...(note ? [[note, "t-dim"]] : [])]),
     fact("forks", project.forks),
