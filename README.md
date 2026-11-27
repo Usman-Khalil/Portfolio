@@ -4,18 +4,6 @@ Personal portfolio of **Usman Khalil**, a Software Engineering student at the Un
 
 **Live portfolio:** <https://usman-khalil.github.io/Portfolio/>
 
-The site combines an animated code-wall introduction with a keyboard-first, Neovim-inspired portfolio interface.
-
-<p align="center">
-  <img src="./assets/demo.gif" alt="Usman Khalil portfolio demo" width="420" />
-</p>
-
-| Code Wall & Themes | Interactive Portfolio |
-| :---: | :---: |
-| <img src="./assets/preview-1.png" alt="Animated code-wall introduction" width="420" /> | <img src="./assets/preview-2.png" alt="Interactive portfolio editor" width="420" /> |
-| **Projects & Stack** | **Terminal Navigation** |
-| <img src="./assets/preview-3.png" alt="Project and stack views" width="420" /> | <img src="./assets/preview-4.png" alt="Theme and terminal views" width="420" /> |
-
 ## Highlights
 
 - C++ and SFML game development
@@ -83,25 +71,6 @@ I am based in Lahore, Pakistan, and I am pursuing a BS in Software Engineering a
 - `Enter` - Open the selected item
 - `:theme` - Change the color theme
 - Terminal commands provide additional keyboard navigation
-
-## Run Locally
-
-No package installation or build step is required.
-
-```powershell
-python serve.py
-```
-
-Open:
-
-- `http://localhost:8767/` - Animated introduction
-- `http://localhost:8767/site/` - Interactive portfolio
-
-To regenerate portfolio data from `portfolio.config.json`:
-
-```powershell
-node scripts/build-data.mjs
-```
 
 ## Project Structure
 
