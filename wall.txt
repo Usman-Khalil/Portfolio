@@ -1,0 +1,321 @@
+#include <iostream>
+#include "SFML/Graphics.hpp"
+#include "SFML/Window.hpp"
+#include "SFML/System.hpp"
+#include "SFML/Audio.hpp"
+#include "Lawn.h"
+#include <vector>
+#include "Plant.h"
+using namespace std;
+using namespace sf;
+Plant::Plant() {
+  greenPlant = nullptr;
+  bluePlant = nullptr;
+  sunFlowerPlant = nullptr;
+  priceBar = nullptr;
+  greenFooter = nullptr;
+  blueFooter = nullptr;
+  sunFooter = nullptr;
+  amountBar = nullptr;
+  greenShootTime = 0;
+  blueShootTime = 0;
+  sunGlowTime = 0;
+  numOfSunFlower = 50;
+}
+void Plant::initializeTextureForPlants() {
+  //Green
+  if (!greenPlantTex.loadFromFile("Images/green.png"))
+    throw "could not load green.png from file";
+  greenPlant = make_unique<Sprite>(greenPlantTex);
+  greenPlant->setScale({ 0.05 , 0.05 });
+  greenPlant->setPosition({ 5,5 });
+  greenPlant->setColor(Color(255, 255, 255, 150));
+  //Blue
+  if (!bluePlantTex.loadFromFile("Images/blue.png"))
+    throw "could not load blue.png from file";
+  bluePlant = make_unique<Sprite>(bluePlantTex);
+  bluePlant->setScale({ 0.08 , 0.08 });
+  bluePlant->setPosition({ greenPlant->getPosition().x + greenPlant->getGlobalBounds().size.x + 5 ,5});
+  bluePlant->setColor(Color(255, 255, 255, 150));
+  //sunFlower
+  if (!sunFlowerPlantTex.loadFromFile("Images/sun_flower.png"))
+    throw "could not load sun_flower.png from file";
+  sunFlowerPlant = make_unique<Sprite>(sunFlowerPlantTex);
+  sunFlowerPlant->setScale({ 0.05 , 0.045 });
+  sunFlowerPlant->setPosition({ bluePlant->getPosition().x + bluePlant->getGlobalBounds().size.x + 5,5 });
+  sunFlowerPlant->setColor(Color(255, 255, 255, 150));
+  //PriceBar
+  if (!priceBarTex.loadFromFile("Images/price_bar.png"))
+    throw "could not load price_bar.jfif from file";
+  priceBar = make_unique<Sprite>(priceBarTex);
+  priceBar->setScale({ 0.45 , 0.25 });
+  priceBar->setPosition({ greenPlant->getPosition().x + 8 ,greenPlant->getPosition().y + greenPlant->getGlobalBounds().size.y + 3 });
+  //AmountBar
+  if (!amountBarTex.loadFromFile("Images/sun_bar.png"))
+    throw "could not load";
+  amountBar = make_unique<Sprite>(amountBarTex);
+  amountBar->setPosition({ greenPlant->getPosition().x + 20 , priceBar->getPosition().y + priceBar->getGlobalBounds().size.y + 22 });
+}
+#include <iostream>
+#include "SFML/Graphics.hpp"
+#include "SFML/Window.hpp"
+#include "SFML/System.hpp"
+#include "SFML/Audio.hpp"
+#include "Lawn.h"
+#include "Plant.h"
+#include "game.h"
+#include <vector>
+#include <string>
+#include "zombies.h"
+#include "projectiles.h"
+#include "main_menu.h"
+using namespace std;
+using namespace sf;
+Game game;
+MainMenu::MainMenu() {
+  startButtonText = nullptr;
+  main = nullptr;
+  loadingTime = 0;
+}
+void MainMenu::initializeMainMenuTexture(RenderWindow& window) {
+  if (!mainTex.loadFromFile("Images/main.png"))
+    throw "could not load main.png from the file";
+  main = make_unique<Sprite>(mainTex);
+  main->setOrigin({ main->getLocalBounds().size.x / 2 , main->getLocalBounds().size.y / 2 });
+  main->setPosition({ static_cast<float>(window.getSize().x / 2) , static_cast<float>(window.getSize().y / 2) });
+  if (!loadingTex.loadFromFile("Images/loading.png"))
+    throw "could not load loading.png from the file";
+  loading = make_unique<Sprite>(loadingTex);
+  loading->setScale({ 0.865 , 1 });
+  if (!font.openFromFile("Fonts/Coraline's Cat.otf"))
+    throw "could load font front the file";
+  startButtonText = make_unique<Text>(font, "Start", 30);
+  startButtonText->setOrigin({ startButtonText->getLocalBounds().size.x / 2 , startButtonText->getLocalBounds().size.y / 2 });
+  startButtonText->setPosition({ static_cast<float>(window.getSize().x / 2)  , 510});
+  startButtonText->setFillColor(Color(184,45,40));
+  if (!mainMenu.openFromFile("Music/main.ogg"))
+    throw "could not open main.ogg from the file";
+  if (!bgTex.loadFromFile("Images/main_menu.png"))
+    throw "could not load main_menu.png from the file";
+  bg = make_unique<Sprite>(bgTex);
+  bg->setOrigin({ bg->getLocalBounds().size.x / 2 , bg->getLocalBounds().size.y / 2 });
+  bg->setPosition({ static_cast<float>(window.getSize().x / 2) , static_cast<float>(window.getSize().y / 2) });
+  bg->setScale({ 0.86 , 0.97 });
+  mainMenu.setLooping(1000);
+}
+void MainMenu::initialize() {
+  RenderWindow window(VideoMode({ 1300 , 700 }) , "Plant_VS_Zombies");
+  window.setFramerateLimit(60);
+  initializeMainMenuTexture(window);
+  mainMenu.play();
+  while (window.isOpen()) {
+    while (const optional event = window.pollEvent()) {
+      if (event->is<Event::Closed>())
+        window.close();
+      if (const auto* keyPressed = event->getIf<Event::KeyPressed>()) {
+        if (keyPressed->scancode == Keyboard::Scancode::Escape)
+          window.close();
+#include <iostream>
+#include "Memory.h"
+#include <iomanip>
+using namespace std;
+void Memory::printMemory(short int address)
+{
+    cout << '\n';
+    int rowIdx,
+        columnIdx,
+        endingOfColumn,
+        endingOfRow;
+    columnIdx = address / 16;
+    endingOfColumn = (8 + address / 16);
+    endingOfRow = 16;
+    for (int i = columnIdx; i <= endingOfColumn; i++)
+    {
+        rowIdx = 0;
+        if (i == endingOfColumn)
+            endingOfRow = address % 16;
+        cout << hex << right << setfill('0') << "073F:" << setw(3) << columnIdx << rowIdx << "  ";
+        if (i == address / 16)
+        {
+            rowIdx = (address % 16);
+            for (int j = 0; j < address % 16; j++)
+            {
+                cout << setw(3) << setfill(' ') << ' ';
+            }
+        }
+        for (int j = rowIdx; j < endingOfRow; j++)
+        {
+            cout << setw(2) << setfill('0') << memoryView[i][j];
+            if (j == 7)
+                cout << '-';
+            else
+                cout << ' ';
+        }
+        columnIdx += 1;
+        if (i == endingOfColumn)
+        {
+            for (int j = 0; j <= 16 - endingOfRow; j++)
+            {
+                cout << setw(3) << setfill(' ') << ' ';
+            }
+        }
+        cout << "\t\t\t";
+        if (i == address / 16)
+        {
+            for (int j = 0; j < address % 16; j++)
+            {
+                cout << setw(2) << setfill(' ') << ' ';
+            }
+        }
+        for (int j = rowIdx; j < endingOfRow; j++)
+        {
+            if (memoryRepresentation[i][j] == 0)
+                cout << '.' << " ";
+            else
+                cout << memoryRepresentation[i][j] << " ";
+            rowIdx += 1;
+        }
+        cout << '\n';
+    }
+    cout << '\n';
+}
+short int Memory::getMemoryPointer()
+{
+    return memoryPointer;
+}
+bool Memory::isValidMemoryAddress(short int address)
+{
+    if (address <= 0 || address >= 0xf00)
+        return false;
+#include <iostream>
+#include <iomanip>
+#include "Memory.h"
+#include "Instructions.h"
+#include "Debugger.h"
+using namespace std;
+void Debugger::displayCommands()
+{
+    cout << left << '\n';
+    cout << "\t...............................................................\n\t.                                                             .\n\t.             Masm Debugger 3.0 - Project                     .\n\t.                                                             .\n\t...............................................................\n\n";
+    cout << setw(16) << "1. dump" << "D  [range] \n";
+    cout << setw(16) << "2. enter" << "E  address[list] \n";
+    cout << setw(16) << "3. fill" << "F  range list \n";
+    cout << setw(16) << "4. compare" << "C  range address \n";
+    cout << setw(16) << "5. hex" << "H  value1 value2 \n";
+    cout << setw(16) << "6. move" << "M  range address\n";
+    cout << setw(16) << "7. register" << "R  [register]\n";
+    cout << setw(16) << "8. search" << "S  range list\n";
+    cout << setw(16) << "9. assemble" << "A  [address] \n";
+    cout << setw(16) << "10.unassemble" << "U  [address] \n";
+    cout << setw(16) << "11.trace" << "T  [=address] [value] \n";
+    cout << setw(16) << "12.quit" << "Q\n";
+}
+void Debugger::displayErrors()
+{
+    cout << "\033[31m\n\t^  Error\n\033[0m";
+    cin.ignore(100, '\n');
+}
+void Debugger::startDebugging()
+{
+    Instructions ins;
+    char userInput;
+    do
+    {
+        cout << "\n-";
+        cin >> userInput;
+        switch (userInput)
+        {
+            case 'd':
+                ins.Dump();
+                break;
+            case 'e':
+                ins.Enter();
+                break;
+            case 'h':
+                ins.Hex();
+                break;
+            case 'f':
+                ins.Fill();
+                break;
+            case 'm':
+                ins.Move();
+                break;
+            case 's':
+                ins.Search();
+                break;
+            case 'c':
+                ins.Compare();
+                break;
+            case 'q':
+                break;
+            case 'r':
+                ins.loadRegisters();
+                break;
+            case 'a':
+                ins.Assemble();
+                break;
+            case 'u':
+                ins.Unassemble();
+                break;
+            case 't':
+                ins.Trace();
+                break;
+            case '?':
+                ins.Help();
+                break;
+#include <iostream>
+using namespace std;
+class Human
+{
+    string name;
+protected:
+    int age;
+public:
+    int weight;
+};
+class Student : public Human // means that the public properties of the parent is treated as public in child while protected are treated as potected;
+{
+    int rollNo , fees;
+    void access()
+    {
+        name = "Usman"; // cannot be accessed in the child class bcz it is the  private member of the parent class
+        age = 45; // can be accessed bcz it is protected in parent class and it can  be accessed in the child class as well;
+        weight = 89; // can be accessed bcz it is public in parent class and it can  be accessed in the child class as well;
+    }
+};
+class Teacher : protected Human // means that the public properties of the parent is treated as protected in child while protected are also treated as potected;
+{
+    int rollNo, fees;
+    void access()
+    {
+        name = "Usman"; // cannot be accessed in the child class bcz it is the  private member of the parent class
+        age = 45; // can be accessed bcz it is protected in parent class and it can  be accessed in the child class as well;
+        weight = 89; // can be accessed bcz it is public in parent class and it can  be accessed in the child class as well;
+    }
+};
+class Employee : private Human // means that the public properties of the parent is treated as private in child while protected are also treated as private;
+{
+    int rollNo, fees;
+    void access()
+    {
+        name = "Usman"; // cannot be accessed in the child class bcz it is the  private member of the parent class
+        age = 45; // can be accessed bcz it is protected in parent class and it can  be accessed in the child class as well;
+        weight = 89; // can be accessed bcz it is public in parent class and it can  be accessed in the child class as well;
+    }
+};
+int main()
+{
+    Student A1;
+    A1.name = "Usman"; // cannot access name because it is the private member of the parent class human so cannot be accessed through child class;
+    A1.age = 24; // cannot access age throough because it is protected for the child class class only so cannot be access in external code;
+    A1.weight = 67; // can be accessed everywhere directlly through parent class or indirectly through the child class bcz it is the public member;
+    Teacher T1;
+    T1.name = "Usman"; // cannot access name because it is the private member of the parent class human so cannot be accessed through child class;
+    T1.age = 24; // cannot access age throough because it is protected for the child class class only so cannot be access in external code;
+    T1.weight = 67; // cannot be accessd although it is the public member of the parent class but the chlid class make it protected so it cannot be accessed in the external code;
+    Employee E1;
+    E1.name = "Usman"; // cannot access name because it is the private member of the parent class human so cannot be accessed through child class;
+    E1.age = 24; // cannot access age throough because it is protected for the child class class only so cannot be access in external code;
+    E1.weight = 67; // cannot be accessd although it is the public member of the parent class but the chlid class make it private so it cannot be accessed in the external code;
+    return 0;
+}

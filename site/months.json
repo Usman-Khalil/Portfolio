@@ -1,0 +1,85 @@
+{
+ "from": "2026-01-01",
+ "to": "2026-11-26",
+ "fetchedAt": "2026-11-26T20:44:08.000Z",
+ "scope": "Commits per repository and month (from cloned public repos)",
+ "months": [
+  {
+   "month": "2026-01",
+   "top": []
+  },
+  {
+   "month": "2026-02",
+   "top": []
+  },
+  {
+   "month": "2026-03",
+   "top": []
+  },
+  {
+   "month": "2026-04",
+   "top": []
+  },
+  {
+   "month": "2026-05",
+   "top": []
+  },
+  {
+   "month": "2026-06",
+   "top": [
+    {
+     "repo": "Masm_Debugger_Project",
+     "owner": "Usman-Khalil",
+     "commits": 18
+    },
+    {
+     "repo": "neetcode-submissions",
+     "owner": "Usman-Khalil",
+     "commits": 9
+    },
+    {
+     "repo": "OOP",
+     "owner": "Usman-Khalil",
+     "commits": 5
+    },
+    {
+     "repo": "Small-Projects",
+     "owner": "Usman-Khalil",
+     "commits": 2
+    }
+   ]
+  },
+  {
+   "month": "2026-07",
+   "top": [
+    {
+     "repo": "PlantsVsZombies",
+     "owner": "Usman-Khalil",
+     "commits": 28
+    }
+   ]
+  },
+  {
+   "month": "2026-08",
+   "top": []
+  },
+  {
+   "month": "2026-09",
+   "top": []
+  },
+  {
+   "month": "2026-10",
+   "top": []
+  },
+  {
+   "month": "2026-11",
+   "top": [
+    {
+     "repo": "Portfolio",
+     "owner": "Usman-Khalil",
+     "commits": 2
+    }
+   ]
+  }
+ ]
+}

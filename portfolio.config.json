@@ -1,0 +1,160 @@
+{
+  "identity": {
+    "name": "Usman Khalil",
+    "barTitle": "USMAN KHALIL",
+    "terminalUser": "usman",
+    "domain": "usman-khalil.github.io",
+    "tagline": "C++ systems, games, algorithms.",
+    "github": "Usman-Khalil",
+    "storagePrefix": "usman-portfolio"
+  },
+  "about": {
+    "bio": "Software Engineering student at the University of the Punjab building C++ games and low-level developer tools. Competitive programmer with 600+ problems solved across LeetCode, Codeforces, GeeksforGeeks, AtCoder and CodeChef.",
+    "extra": "Lahore, Pakistan · BS Software Engineering"
+  },
+  "links": [
+    {
+      "label": "Email",
+      "url": "mailto:usmankhalil6868@gmail.com"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/Usman-Khalil"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://linkedin.com/in/usman-khalil-868b18381"
+    },
+    {
+      "label": "Codeforces",
+      "url": "https://codeforces.com/profile/usmankhalil6868"
+    },
+    {
+      "label": "LeetCode",
+      "url": "https://leetcode.com/u/usman-k"
+    },
+    {
+      "label": "GeeksforGeeks",
+      "url": "https://www.geeksforgeeks.org/profile/usmankha7y0u"
+    }
+  ],
+  "work": [
+    {
+      "when": "09/2025 – present",
+      "title": "BS Software Engineering",
+      "org": "University of the Punjab",
+      "where": "Lahore, Punjab",
+      "desc": "Studying software engineering. Class Representative and Physics Project Manager (second position in department).",
+      "url": "https://github.com/Usman-Khalil"
+    },
+    {
+      "when": "ongoing",
+      "title": "Competitive Programmer",
+      "org": "Codeforces · LeetCode · AtCoder · CodeChef",
+      "where": "Online",
+      "desc": "Solved 600+ problems across LeetCode, Codeforces, GeeksforGeeks, AtCoder and CodeChef. Codeforces Newbie, max rating 1122.",
+      "url": "https://codeforces.com/profile/usmankhalil6868"
+    },
+    {
+      "when": "04/2023 – 05/2025",
+      "title": "Intermediate, Computer Science",
+      "org": "Punjab Group of Colleges",
+      "where": "Hasilpur, Dist. BWP",
+      "desc": "Completed Intermediate with Computer Science before starting the BS in Software Engineering."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Plants Vs Zombies",
+      "tag": "Game · C++",
+      "desc": "A Plants vs. Zombies style Windows tower-defense game in C++ with SFML: place plants, collect suns and stop zombie waves.",
+      "long": "Players place plants on a lawn to stop waves of zombies from reaching the house. Plants shoot automatically, sunflowers and falling suns supply the resources used to buy new plants, and zombies spawn on multiple rows with HP bars. The game runs on a classic loop of events, update and render, coordinated by PlantManager, ZombieManager, BulletManager, SunManager and a CollisionManager, with SFML handling graphics, audio, windowing and input. Controls are mouse-driven (click to collect suns, select and place plants, press Start in the menu). Ships as a Visual Studio solution for Windows with SFML runtime DLLs, plus an ASCII architecture diagram of the whole game loop.",
+      "githubRepo": "Usman-Khalil/PlantsVsZombies",
+      "shots": [
+        "shots/pvz-main-menu.webp",
+        "shots/pvz-fight.webp",
+        "shots/pvz-interface.webp",
+        "shots/pvz-game-over.webp",
+        "shots/pvz-player-dead.webp"
+      ],
+      "stack": [
+        "C++",
+        "SFML",
+        "OOP",
+        "STL",
+        "Visual Studio",
+        "MSVC"
+      ],
+      "url": "https://github.com/Usman-Khalil/PlantsVsZombies",
+      "links": [
+        {
+          "label": "Architecture diagram",
+          "url": "https://github.com/Usman-Khalil/PlantsVsZombies/blob/main/architecture.txt"
+        },
+        {
+          "label": "README",
+          "url": "https://github.com/Usman-Khalil/PlantsVsZombies#readme"
+        }
+      ]
+    },
+    {
+      "name": "Masm Debugger Clone",
+      "tag": "Tooling · C++",
+      "desc": "A console MASM-style virtual machine and debugger in C++ for stepping through assembly and inspecting CPU state.",
+      "long": "A console-based virtual machine emulator inspired by vintage emulators, built to show how a processor handles tasks at a low level. It simulates a simplified CPU with customizable registers and flags, supports hex-dump memory views with editing, assembly input and execution, step-by-step tracing with real-time register updates, and debugging aids such as breakpoints and memory watches. A command shell (dump, enter, fill, move, search, assemble, unassemble, trace) drives it, and instructions persist to memory.txt. Designed for education and system-level debugging, and released under the MIT License.",
+      "githubRepo": "Usman-Khalil/Masm_Debugger_Project",
+      "shots": [],
+      "stack": [
+        "C++",
+        "MSVC",
+        "Git",
+        "CPU emulation"
+      ],
+      "url": "https://github.com/Usman-Khalil/Masm_Debugger_Project",
+      "links": [
+        {
+          "label": "README",
+          "url": "https://github.com/Usman-Khalil/Masm_Debugger_Project#readme"
+        }
+      ]
+    },
+    {
+      "name": "neetcode-submissions",
+      "tag": "Algorithms · C++",
+      "desc": "My NeetCode.io problem submissions.",
+      "long": "Solutions to NeetCode.io practice problems, part of a wider 600+ problem competitive programming habit.",
+      "githubRepo": "Usman-Khalil/neetcode-submissions",
+      "more": true,
+      "shots": [],
+      "stack": [
+        "C++"
+      ],
+      "url": "https://github.com/Usman-Khalil/neetcode-submissions"
+    },
+    {
+      "name": "OOP",
+      "tag": "Coursework · C++",
+      "desc": "Object oriented programming in C++.",
+      "long": "Coursework practice covering structs, enums, classes, constructors, destructors, operator overloading and templates.",
+      "githubRepo": "Usman-Khalil/OOP",
+      "more": true,
+      "shots": [],
+      "stack": [
+        "C++"
+      ],
+      "url": "https://github.com/Usman-Khalil/OOP"
+    }
+  ],
+  "talks": [],
+  "wallRepos": [],
+  "siteStack": [
+    {
+      "name": "Vanilla JS",
+      "via": "zero-build frontend"
+    },
+    {
+      "name": "Canvas 2D",
+      "via": "intro + contribution ink"
+    }
+  ]
+}
